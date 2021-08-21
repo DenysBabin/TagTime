@@ -1,14 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <tag-menu></tag-menu>
     <router-view/>
   </div>
 </template>
 
+<script>
+import TagMenu from "@/components/TagMenu";
+import { Vue, Component } from 'vue-property-decorator'
+
+@Component({
+  components: {
+    TagMenu,
+  }
+})
+
+export default class App extends Vue {}
+</script>
+
 <style>
+body {
+  margin: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
